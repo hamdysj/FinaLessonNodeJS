@@ -1,0 +1,22 @@
+{
+  "name": "finalesson",
+  "version": "1.0.0",
+  "description": "Learning Node Express and Mongo DB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamdysj/FinaLessonNodeJS.git"
+  },
+  "author": "Hamdallah Folly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamdysj/FinaLessonNodeJS/issues"
+  },
+  "homepage": "https://github.com/hamdysj/FinaLessonNodeJS#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
