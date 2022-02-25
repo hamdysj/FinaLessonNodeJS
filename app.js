@@ -117,12 +117,25 @@ const deleteTour = (req, res) => {
     });
 };
 
+/* Tidy Route
+app.post('/api/v1/tours', createTour);
+app.get('/api/v1/tours', getTour);
+app.get('/api/v1/tours/:id', getTourbyId);
+app.patch('/api/v1/tours/:id', updateTour);
+app.delete('/api/v1/tours/:id', deleteTour);
+*/
 
-app.post('/api/v1/tours', createTour());
-app.get('/api/v1/tours', getTour());
-app.get('/api/v1/tours/:id', getTourbyId());
-app.patch('/api/v1/tours/:id', updateTour());
-app.delete('/api/v1/tours/:id', deleteTour());
+//Much More tidy Route -- Refactoring our routes
+app
+.route(('/api/v1/tours')
+.get(getTour)
+.post(createTour);
+
+app
+.route('/api/v1/tours/:id')
+.get(getTourbyId)
+.patch(updateTour)
+.delete(deleteTour);
 
 
 const port = 3000;
