@@ -4,8 +4,12 @@ const morgan = require('morgan');
 
 const app = express();
 
+
+
 //1. MIDDLEWARE
 //To Use a Middleware  ----app.use
+app.use(morgan('dev'));
+
 app.use(express.json());
 
 //Create a Middleware
