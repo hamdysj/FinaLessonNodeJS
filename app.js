@@ -136,6 +136,52 @@ const deleteTour = (req, res) => {
     });
 };
 
+
+const getAllUsers = (req, res) => {
+res
+.status(500)
+.json({
+    status: "success",
+    message: "Business Logic not created yet"
+});
+};
+
+const createUser = (req, res) => {
+    res
+    .status(500)
+    .json({
+        status: "success",
+        message: "Business Logic not created yet"
+    });
+    };
+
+const getUser = (req, res) => {
+        res
+        .status(500)
+        .json({
+            status: "success",
+            message: "Business Logic not created yet"
+        });
+        };
+
+ const updateUser = (req, res) => {
+            res
+            .status(500)
+            .json({
+                status: "success",
+                message: "Business Logic not created yet"
+            });
+            };
+
+const deleteUser = (req, res) => {
+     res
+    .status(500)
+    .json({
+    status: "success",
+    message: "Business Logic not created yet"
+                });
+                };
+
 /* Tidy Route
 app.post('/api/v1/tours', createTour);
 app.get('/api/v1/tours', getTour);
@@ -145,18 +191,36 @@ app.delete('/api/v1/tours/:id', deleteTour);
 */
 
 //4. ROUTING
+const tourRouter = express.Router();
+const userRouter = express.Router();
 
 //Much More tidy Route -- Refactoring our routes
-app
-.route('/api/v1/tours')
+tourRouter
+.route('/')
 .get(getTour)
 .post(createTour);
 
-app
-.route('/api/v1/tours/:id')
+tourRouter
+.route('/:id')
 .get(getTourbyId)
 .patch(updateTour)
 .delete(deleteTour);
+
+userRouter
+.route('/')
+.get(getAllUsers)
+.post(createUser);
+
+userRouter
+.route('/:id')
+.get(getUser)
+.patch(updateUser)
+.delete(deleteUser);
+
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+
+
 
 //5. START THE SERVER
 const port = 3000;
